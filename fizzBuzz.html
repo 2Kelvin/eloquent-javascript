@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fizz Buzz</title>
+  </head>
+  <body>
+    <h1>Fizz Buzz</h1>
+    <p>A number that's not 0 and is divisible by 3 ==> "Fizz"</p>
+    <p>A number that's not 0 and is divisible by 5 ==> "Buzz"</p>
+    <p>A number that is divisible by 3 and 5 ==> "Fizz Buzz"</p>
+    <p>
+      Any number that doesn't fall under the above conditions ==> "${number}"
+    </p>
+    <script>
+      for (let number = 0; number <= 100; number++) {
+        if (number % 5 == 0 && number % 3 == 0) console.log("Fizz Buzz");
+        else if (number % 3 == 0) console.log("Fizz");
+        else if (number % 5 == 0 && number % 3 !== 0) console.log("Buzz");
+        else console.log(number);
+      }
+    </script>
+  </body>
+</html>
