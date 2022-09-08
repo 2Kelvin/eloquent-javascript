@@ -9,10 +9,22 @@
   <body>
     <h1>Chess Board</h1>
     <script>
-      let spaceFirst = " # # # #\n";
-      let hashFirst = "# # # # \n";
-      let chessBoard = `${spaceFirst}${hashFirst}`;
-      console.log(chessBoard + chessBoard + chessBoard + chessBoard);
+      let size = 8;
+      let board = "";
+
+      for (let y = 0; y < size; y++) {
+        for (let x = 0; x < size; x++) {
+          if ((x + y) % 2 == 0) {
+            //didn't really understand the logic on this statement
+            board += " ";
+          } else {
+            board += "#";
+          }
+        }
+        board += "\n";
+      }
+
+      console.log(board);
     </script>
   </body>
 </html>
