@@ -1,3 +1,3 @@
 # eloquent-js
 
-My Notes and projects-code from the eBook [Eloquent JavaScript](https://eloquentjavascript.net/) 3rd Edition.
+My notes and project-code from the eBook [Eloquent JavaScript](https://eloquentjavascript.net/) 3rd Edition.
