@@ -86,3 +86,31 @@ console.log(todoList);
 // concat() method is used to glue arrays together to create a new array.
 // ... similar to what the + operator does for strings.
 // If you pass concat an argument that is not an array, that value will be added to the new array as if it were a one-element array.
+
+// basic data types: strings, numbers, booleans have built in properties and methods
+// examples of string methods: slice(), indexOf(), trim(), padStart(), split(), join(), repeat()
+// string.indexOf() can search more than one character in the string
+// string.trim() removes whitespaces, tab, newlines from the string
+let sentence = "Just do it";
+let motto = sentence.split(" "); // split returns an array of the splitted string
+console.log(motto);
+console.log(motto.join("|"));
+
+// when passing an array to a function so that each element in the array can be used as a different argument,
+// ...use the "spread operator" "..." to do so
+
+// just like using '[]' allows you to look inside an array and access that value,
+// ...using '{}' allows you to access an object's property -> this is called destructuring
+
+// ARRAY LOOPS SHORTCODE
+// original code
+for (let i = 0; i < JOURNAL.length; i++) {
+    let entry = JOURNAL[i];
+    // Do something with entry
+}
+// shortcode
+for (let entry of JOURNAL) {
+    //do something
+}
+// both codes above do the same thing; i.e. loop through each item in the journal array
+// ...keyword 'of' makes this possible
