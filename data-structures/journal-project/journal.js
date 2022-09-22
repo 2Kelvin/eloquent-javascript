@@ -28,3 +28,61 @@ function tableFor(event, myJournal) {
 }
 
 console.log(tableFor("pizza", journal));
+
+function journalEvents(journalParam) {
+    let events = [];
+    for (let entry of journalParam) {
+        for (let event of entry.dayEvents) {
+            if (!events.includes(event)) {
+                events.push(event);
+            }
+        }
+    }
+    return events;
+}
+
+console.log(journalEvents(journal));
+
+for (let event of journalEvents(journal)) {
+    console.log(event + ":", phiCoefficient(tableFor(event, journal)));
+}
+
+for (let event of journalEvents(journal)) {
+    let correlation = phiCoefficient(tableFor(event, journal));
+    if (correlation > 0.1 || correlation < -0.1) {
+        console.log(event + ":", correlation);
+    }
+}
+
+for (let entry of journal) {
+    if (entry.dayEvents.includes("peanuts") &&
+        !entry.dayEvents.includes("brushed teeth")) {
+        entry.dayEvents.push("peanut teeth");
+    }
+}
+console.log(phiCoefficient(tableFor("peanut teeth", journal)));
+
+
+// methods for adding and removing things at the start of an array are called "unshift" and "shift"
+// "shift()" removes the 1st element in an array and returns it
+// "unshift()" inserts new elements at the start of an array & returns the length of the new array
+let todoList = [];
+console.log(todoList.unshift("sleep", "code", "study", "blog", "dance"));
+console.log(todoList.shift());
+console.log(todoList);
+
+// search for a specific value in an array using "indexOf()" method
+// ... it searches from the start to the end of the array and returns the index the searched item
+// ... if the item wasn't found in the array, it returns -1
+// "lastIndexOf()" does the same thing as 'indexOf()' but searches the array from the end to the start instead
+// NOTE: indexOf() & lastIndexOf() return the 1st instance of the value passed to them (in a situation where the same value happens to be more than one in the array)
+// Both indexOf and lastIndexOf take an optional second argument that indicates where to start searching
+
+// "slice()" -> takes start and end indices and returns an array that has only the elements between them. 
+// ...The start index is inclusive, the end index exclusive.
+// if you include one index in slice(), it'll return the an array with values from that index to the end
+// using slice() with no param index(es) copies the entire array
+
+// concat() method is used to glue arrays together to create a new array.
+// ... similar to what the + operator does for strings.
+// If you pass concat an argument that is not an array, that value will be added to the new array as if it were a one-element array.
